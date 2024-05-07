@@ -38,7 +38,7 @@ const SideBar = () => {
             cursor: "pointer",
           }}
         >
-          PH Health Care
+           Health Care
         </Typography>
       </Stack>
       <List>
