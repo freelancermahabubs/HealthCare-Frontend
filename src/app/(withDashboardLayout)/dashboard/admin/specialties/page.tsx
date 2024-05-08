@@ -37,7 +37,7 @@ const SpecialtiesPage = () => {
       renderCell: ({ row }) => {
         return (
           <Box>
-            <Image src={row.icon} width={30} height={30} alt="icon" />
+            <Image src={row?.icon} width={30} height={30} alt="icon" />
           </Box>
         );
       },
