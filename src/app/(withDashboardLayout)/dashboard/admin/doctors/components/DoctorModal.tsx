@@ -1,20 +1,20 @@
-import { Button, Grid } from "@mui/material";
-import { Gender } from "@/types/common";
-import { FieldValues } from "react-hook-form";
+import {Button, Grid} from "@mui/material";
+import {Gender} from "@/types/common";
+import {FieldValues} from "react-hook-form";
 import PHForm from "@/components/Forms/PHForm";
 import PHInput from "@/components/Forms/PHInput";
 import PHSelectField from "@/components/Forms/PHSelectField";
 import PHFullScreenModal from "@/components/Shared/PHModal/PHFullScreenModal";
-import { useCreateDoctorMutation } from "@/redux/api/doctorApi";
-import { modifyPayload } from "@/utils/modifyPayload";
-import { toast } from "sonner";
+import {useCreateDoctorMutation} from "@/redux/api/doctorApi";
+import {modifyPayload} from "@/utils/modifyPayload";
+import {toast} from "sonner";
 
 type TProps = {
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const DoctorModal = ({ open, setOpen }: TProps) => {
+const DoctorModal = ({open, setOpen}: TProps) => {
   const [createDoctor] = useCreateDoctorMutation();
   const handleFormSubmit = async (values: FieldValues) => {
     // console.log(values);
@@ -43,6 +43,7 @@ const DoctorModal = ({ open, setOpen }: TProps) => {
       gender: "",
       experience: 0,
       apointmentFee: 0,
+      // appointmentFee:0,
       qualification: "",
       currentWorkingPlace: "",
       designation: "",
@@ -54,13 +55,13 @@ const DoctorModal = ({ open, setOpen }: TProps) => {
   return (
     <PHFullScreenModal open={open} setOpen={setOpen} title="Create New Doctor">
       <PHForm onSubmit={handleFormSubmit} defaultValues={defaultValues}>
-        <Grid container spacing={2} sx={{ my: 5 }}>
+        <Grid container spacing={2} sx={{my: 5}}>
           <Grid item xs={12} sm={12} md={4}>
             <PHInput
               name="doctor.name"
               label="Name"
               fullWidth={true}
-              sx={{ mb: 2 }}
+              sx={{mb: 2}}
             />
           </Grid>
           <Grid item xs={12} sm={12} md={4}>
@@ -69,7 +70,7 @@ const DoctorModal = ({ open, setOpen }: TProps) => {
               type="email"
               label="Email"
               fullWidth={true}
-              sx={{ mb: 2 }}
+              sx={{mb: 2}}
             />
           </Grid>
 
@@ -79,7 +80,7 @@ const DoctorModal = ({ open, setOpen }: TProps) => {
               type="password"
               label="Password"
               fullWidth={true}
-              sx={{ mb: 2 }}
+              sx={{mb: 2}}
             />
           </Grid>
 
@@ -88,7 +89,7 @@ const DoctorModal = ({ open, setOpen }: TProps) => {
               name="doctor.contactNumber"
               label="Contract Number"
               fullWidth={true}
-              sx={{ mb: 2 }}
+              sx={{mb: 2}}
             />
           </Grid>
           <Grid item xs={12} sm={12} md={4}>
@@ -96,7 +97,7 @@ const DoctorModal = ({ open, setOpen }: TProps) => {
               name="doctor.address"
               label="Address"
               fullWidth={true}
-              sx={{ mb: 2 }}
+              sx={{mb: 2}}
             />
           </Grid>
           <Grid item xs={12} sm={12} md={4}>
@@ -104,7 +105,7 @@ const DoctorModal = ({ open, setOpen }: TProps) => {
               name="doctor.registrationNumber"
               label="Registration Number"
               fullWidth={true}
-              sx={{ mb: 2 }}
+              sx={{mb: 2}}
             />
           </Grid>
           <Grid item xs={12} sm={12} md={4}>
@@ -113,7 +114,7 @@ const DoctorModal = ({ open, setOpen }: TProps) => {
               type="number"
               label="Experience"
               fullWidth={true}
-              sx={{ mb: 2 }}
+              sx={{mb: 2}}
             />
           </Grid>
           <Grid item xs={12} sm={12} md={4}>
@@ -121,16 +122,16 @@ const DoctorModal = ({ open, setOpen }: TProps) => {
               items={Gender}
               name="doctor.gender"
               label="Gender"
-              sx={{ mb: 2 }}
+              sx={{mb: 2}}
             />
           </Grid>
           <Grid item xs={12} sm={12} md={4}>
             <PHInput
               name="doctor.apointmentFee"
               type="number"
-              label="ApointmentFee"
+              label="AppointmentFee"
               fullWidth={true}
-              sx={{ mb: 2 }}
+              sx={{mb: 2}}
             />
           </Grid>
           <Grid item xs={12} sm={12} md={4}>
@@ -138,7 +139,7 @@ const DoctorModal = ({ open, setOpen }: TProps) => {
               name="doctor.qualification"
               label="Qualification"
               fullWidth={true}
-              sx={{ mb: 2 }}
+              sx={{mb: 2}}
             />
           </Grid>
 
@@ -147,7 +148,7 @@ const DoctorModal = ({ open, setOpen }: TProps) => {
               name="doctor.currentWorkingPlace"
               label="Current Working Place"
               fullWidth={true}
-              sx={{ mb: 2 }}
+              sx={{mb: 2}}
             />
           </Grid>
           <Grid item xs={12} sm={12} md={4}>
@@ -155,7 +156,7 @@ const DoctorModal = ({ open, setOpen }: TProps) => {
               name="doctor.designation"
               label="Designation"
               fullWidth={true}
-              sx={{ mb: 2 }}
+              sx={{mb: 2}}
             />
           </Grid>
         </Grid>

@@ -170,7 +170,7 @@ const ProfileUpdateModal = ({ open, setOpen, id }: TProps) => {
                   <PHInput
                      name='apointmentFee'
                      type='number'
-                     label='ApointmentFee'
+                     label='AppointmentFee'
                      sx={{ mb: 2 }}
                      fullWidth
                   />

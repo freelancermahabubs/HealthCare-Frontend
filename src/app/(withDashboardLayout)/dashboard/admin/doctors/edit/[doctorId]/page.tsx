@@ -135,7 +135,7 @@ const DoctorUpdatePage = ({ params }: TParams) => {
               <PHInput
                 name="apointmentFee"
                 type="number"
-                label="ApointmentFee"
+                label="AppointmentFee"
                 fullWidth={true}
                 sx={{ mb: 2 }}
               />

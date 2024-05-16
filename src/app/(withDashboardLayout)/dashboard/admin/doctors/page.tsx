@@ -1,15 +1,15 @@
 "use client";
-import { Box, Button, IconButton, Stack, TextField } from "@mui/material";
+import {Box, Button, IconButton, Stack, TextField} from "@mui/material";
 import DoctorModal from "./components/DoctorModal";
-import { useState } from "react";
+import {useState} from "react";
 import {
   useDeleteDoctorMutation,
   useGetAllDoctorsQuery,
 } from "@/redux/api/doctorApi";
-import { DataGrid, GridColDef } from "@mui/x-data-grid";
+import {DataGrid, GridColDef} from "@mui/x-data-grid";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { useDebounced } from "@/redux/hooks";
-import { toast } from "sonner";
+import {useDebounced} from "@/redux/hooks";
+import {toast} from "sonner";
 import EditIcon from "@mui/icons-material/Edit";
 import Link from "next/link";
 
@@ -28,7 +28,7 @@ const DoctorsPage = () => {
     query["searchTerm"] = searchTerm;
   }
 
-  const { data, isLoading } = useGetAllDoctorsQuery({ ...query });
+  const {data, isLoading} = useGetAllDoctorsQuery({...query});
   const [deleteDoctor] = useDeleteDoctorMutation();
 
   // console.log(data);
@@ -50,25 +50,24 @@ const DoctorsPage = () => {
   };
 
   const columns: GridColDef[] = [
-    { field: "name", headerName: "Name", flex: 1 },
-    { field: "email", headerName: "Email", flex: 1 },
-    { field: "contactNumber", headerName: "Contact Number", flex: 1 },
-    { field: "gender", headerName: "Gender", flex: 1 },
-    { field: "apointmentFee", headerName: "Appointment Fee", flex: 1 },
+    {field: "name", headerName: "Name", flex: 1},
+    {field: "email", headerName: "Email", flex: 1},
+    {field: "contactNumber", headerName: "Contact Number", flex: 1},
+    {field: "gender", headerName: "Gender", flex: 1},
+    {field: "apointmentFee", headerName: "Appointment Fee", flex: 1},
     {
       field: "action",
       headerName: "Action",
       flex: 1,
       headerAlign: "center",
       align: "center",
-      renderCell: ({ row }) => {
+      renderCell: ({row}) => {
         return (
           <Box>
             <IconButton
               onClick={() => handleDelete(row.id)}
-              aria-label="delete"
-            >
-              <DeleteIcon sx={{ color: "red" }} />
+              aria-label="delete">
+              <DeleteIcon sx={{color: "red"}} />
             </IconButton>
             <Link href={`/dashboard/admin/doctors/edit/${row.id}`}>
               <IconButton aria-label="delete">
